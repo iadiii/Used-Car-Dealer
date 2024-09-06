@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
+   <children>
+      <AnchorPane fx:id="adminform" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutY="3.0" prefHeight="600.0" prefWidth="200.0">
+               <bottom>
+                  <AnchorPane fx:id="navbar" prefHeight="593.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="welcomeMessage" layoutX="58.0" layoutY="103.0" text="Welcome,">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nameofuser" layoutX="67.0" layoutY="147.0" text="Admin1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="manageCarsbtn" layoutX="25.0" layoutY="282.0" mnemonicParsing="false" onAction="#formSwitch" prefHeight="43.0" prefWidth="149.0" text="Manage Cars">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="logoutbtn" layoutX="23.0" layoutY="509.0" mnemonicParsing="false" onAction="#logout" prefHeight="43.0" prefWidth="158.0" text="Logout">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="homebtn" layoutX="25.0" layoutY="228.0" mnemonicParsing="false" onAction="#formSwitch" prefHeight="43.0" prefWidth="150.0" text="Home">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </bottom></BorderPane>
+            <BorderPane fx:id="modifyrecords" layoutX="200.0" layoutY="7.0" prefHeight="600.0" prefWidth="273.0">
+               <left>
+                  <AnchorPane fx:id="fouroperationform" prefHeight="599.0" prefWidth="274.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="carid" layoutX="38.0" layoutY="53.0" prefHeight="22.0" prefWidth="47.0" text="Car ID:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="carIdField" layoutX="95.0" layoutY="51.0" promptText="carid" />
+                        <Label fx:id="make" layoutX="38.0" layoutY="103.0" prefHeight="22.0" prefWidth="47.0" text="Make:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="makeField" layoutX="95.0" layoutY="102.0" promptText="make" />
+                        <Label fx:id="model" layoutX="38.0" layoutY="153.0" prefHeight="22.0" prefWidth="47.0" text="Model:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="modelField" layoutX="95.0" layoutY="152.0" promptText="model" />
+                        <Button fx:id="addbtn" layoutX="38.0" layoutY="408.0" mnemonicParsing="false" onAction="#addCar" prefHeight="26.0" prefWidth="95.0" text="add" />
+                        <Button fx:id="deletebtn" layoutX="145.0" layoutY="408.0" mnemonicParsing="false" onAction="#deleteCar" prefHeight="26.0" prefWidth="95.0" text="delete" />
+                        <Button fx:id="updatebtn" layoutX="38.0" layoutY="464.0" mnemonicParsing="false" onAction="#updateCar" prefHeight="26.0" prefWidth="95.0" text="update" />
+                        <Button fx:id="clearbtn" layoutX="145.0" layoutY="464.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="26.0" prefWidth="95.0" text="clear" />
+                        <TextField fx:id="yearField" layoutX="95.0" layoutY="198.0" promptText="year" />
+                        <Label fx:id="year" layoutX="38.0" layoutY="199.0" prefHeight="22.0" prefWidth="47.0" text="Year:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="price" layoutX="38.0" layoutY="241.0" prefHeight="22.0" prefWidth="62.0" text="Price">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="priceField" layoutX="95.0" layoutY="239.0" promptText="price" />
+                        <Label fx:id="color" layoutX="38.0" layoutY="283.0" text="Color:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="colorField" layoutX="95.0" layoutY="279.0" promptText="color" />
+                        <Label fx:id="quantity" layoutX="35.0" layoutY="325.0" text="Quantity:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="quantityField" layoutX="95.0" layoutY="321.0" promptText="quantity" />
+                     </children>
+                  </AnchorPane>
+               </left></BorderPane>
+            <BorderPane fx:id="tabularform" layoutX="474.0" layoutY="3.0" prefHeight="600.0" prefWidth="620.0">
+               <top>
+                  <AnchorPane fx:id="tableform" prefHeight="604.0" prefWidth="620.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TableView fx:id="tableView" layoutX="-2.0" layoutY="76.0" prefHeight="455.0" prefWidth="591.0">
+                          <columns>
+                            <TableColumn fx:id="carIdCol" prefWidth="49.0" text="Car ID" />
+                            <TableColumn fx:id="makeCol" prefWidth="90.5" text="Make" />
+                              <TableColumn fx:id="yearCol" prefWidth="59.0" text="Year" />
+                              <TableColumn fx:id="priceCol" prefWidth="95.0" text="Price" />
+                              <TableColumn fx:id="quantityCol" prefWidth="65.0" text="Quantity" />
+                              <TableColumn fx:id="colorCol" prefWidth="113.0" text="Color" />
+                              <TableColumn fx:id="modelCol" prefWidth="118.5" text="Model" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </top></BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

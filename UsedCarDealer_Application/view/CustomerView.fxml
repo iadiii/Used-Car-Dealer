@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+   <children>
+      <AnchorPane fx:id="cus_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane fx:id="cus_welcomeForm" prefHeight="500.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="cus_welcomeMessage" layoutX="58.0" layoutY="91.0" text="Welcome,">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="cus_name" layoutX="76.0" layoutY="140.0" text="User1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="cus_buybtn" layoutX="28.0" layoutY="264.0" mnemonicParsing="false" onAction="#formSwitch" prefHeight="43.0" prefWidth="149.0" text="Buy">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cus_logout" layoutX="28.0" layoutY="412.0" mnemonicParsing="false" onAction="#logout" prefHeight="43.0" prefWidth="150.0" text="Logout">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cus_home" layoutX="28.0" layoutY="206.0" mnemonicParsing="false" onAction="#formSwitch" prefHeight="43.0" prefWidth="149.0" text="Home">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+            <AnchorPane layoutX="200.0" layoutY="4.0" prefHeight="492.0" prefWidth="431.0">
+               <children>
+                  <TableView fx:id="tableView" layoutX="7.0" layoutY="87.0" prefHeight="366.0" prefWidth="456.0">
+                    <columns>
+                      <TableColumn fx:id="carIdCol" prefWidth="53.0" text="Car ID" />
+                      <TableColumn fx:id="makeCol" prefWidth="63.0" text="Make" />
+                        <TableColumn fx:id="yearCol" prefWidth="49.5" text="Year" />
+                        <TableColumn fx:id="priceCol" prefWidth="57.5" text="Price" />
+                        <TableColumn fx:id="quantityCol" prefWidth="73.5" text="Quantity" />
+                        <TableColumn fx:id="modelCol" prefWidth="66.5" text="Model" />
+                        <TableColumn fx:id="colorCol" prefWidth="92.0" text="Color" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+            <AnchorPane layoutX="694.0">
+               <children>
+                  <AnchorPane fx:id="cus_buyform" prefHeight="500.0" prefWidth="206.0">
+                     <children>
+                        <Label fx:id="cus_carbuy" layoutX="21.0" layoutY="54.0" text="Car ID:" />
+                        <ComboBox fx:id="cus_carCombo" layoutX="85.0" layoutY="50.0" onAction="#purchaseCar" prefHeight="26.0" prefWidth="87.0" promptText="Choose" />
+                        <Label fx:id="cus_makebuy" layoutX="22.0" layoutY="107.0" text="Make:" />
+                        <Spinner fx:id="cus_quantitySpinner" layoutX="85.0" layoutY="159.0" onMouseClicked="#buyQuantity" prefHeight="26.0" prefWidth="87.0" />
+                        <Button fx:id="cus_addbtn" layoutX="120.0" layoutY="229.0" mnemonicParsing="false" onAction="#addPurchase" prefHeight="26.0" prefWidth="62.0" text="Add" />
+                        <Label fx:id="cus_total" layoutX="106.0" layoutY="282.0" text="Total:" />
+                        <Button fx:id="cus_paybtn" layoutX="125.0" layoutY="413.0" mnemonicParsing="false" onAction="#showBillDetails" prefHeight="26.0" prefWidth="62.0" text="Pay" />
+                        <Label fx:id="cus_amount" layoutX="137.0" layoutY="282.0" text="\$0.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
